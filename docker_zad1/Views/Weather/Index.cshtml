@@ -1,0 +1,28 @@
+﻿@model WeatherViewModel
+@{
+    ViewData["Title"] = "Aktualna pogoda";
+}
+
+<h2 class="text-xl font-bold mb-4">@ViewData["Title"]</h2>
+
+<form asp-action="Index" method="post" class="space-y-3">
+    <select asp-for="SelectedCountry"
+            asp-items="Model.CountryOptions"
+            onchange="this.form.submit()"
+            class="border p-2"></select>
+
+    <select asp-for="SelectedCity"
+            asp-items="Model.CityOptions"
+            class="border p-2"></select>
+
+    <button class="bg-blue-600 px-4 py-2">Pobierz</button>
+</form>
+
+@if(Model.Weather is not null) {
+    <div class="mt-6 p-4 border rounded">
+        <p><strong>@Model.Weather.City</strong></p>
+        <p>Temperatura: <strong>@Model.Weather.Temp&nbsp;°C</strong></p>
+        <p>Ciśnienie: @Model.Weather.Pressure&nbsp;hPa</p>
+        <p>Warunki: @Model.Weather.Description</p>
+    </div>
+}
