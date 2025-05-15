@@ -4,12 +4,12 @@
 ## CZĘŚĆ OBOWIĄZKOWA
 
 ## 1. Aplikacja pogodowa
-Aplikacja została napisana w oparciu o framework ASP.NET CORE
+#### Aplikacja została napisana w oparciu o framework ASP.NET CORE
 Po uruchomieniu wyświetla w logach:
   - Datę i czas uruchomienia
   - Imię i nazwisko autora
-  - Port TCP, na którym nasłuchuje aplikacja
-Interfejs webowy umożliwia:
+  - Port TCP, na którym nasłuchuje aplikacja  
+#### Interfejs webowy umożliwia:
   - Wybór kraju z predefiniowanej listy
   - Wybór miasta w wybranym kraju
   - Wyświetlenie aktualnej pogody(temperatura, ciśnienie, krótki opis warunków pogodowych)
