@@ -83,7 +83,7 @@ jobs:
         with:
           images: ghcr.io/${{ env.IMAGE_NAME }}
           tags: |
-            type=ref,event=push,enable=true
+            type=ref,event=branch,enable=true
             type=sha,format=short
             type=semver,pattern={{version}}
           labels: |
