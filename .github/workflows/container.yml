@@ -56,7 +56,8 @@ jobs:
         platforms: linux/amd64,linux/arm64
         load: false
         push: false
-        outputs: type=oci,dest=/tmp/image.tar
+        outputs: |
+          type=oci,dest=/tmp/image.tar
         provenance: false
         cache-from: type=registry,ref=docker.io/${{ env.CACHE_REPO }}
         cache-to:   type=registry,ref=docker.io/${{ env.CACHE_REPO }},mode=max 
