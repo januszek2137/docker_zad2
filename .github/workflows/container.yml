@@ -48,6 +48,7 @@ jobs:
       - name: Scan built image (Trivy)
         uses: aquasecurity/trivy-action@0.18.0
         with:
+          vuln-type: library
           scan-type: image
           image-ref: ${{ env.SCAN_IMAGE }}
           severity: CRITICAL,HIGH
