@@ -57,7 +57,7 @@ jobs:
         load: false
         push: false
         outputs: |
-          type=docker,dest=/tmp/image.tar
+          type=oci,dest=/tmp/image-oci
         provenance: false
         cache-from: type=registry,ref=docker.io/${{ env.CACHE_REPO }}
         cache-to:   type=registry,ref=docker.io/${{ env.CACHE_REPO }},mode=max 
@@ -67,7 +67,7 @@ jobs:
     - name: Scan built image (Trivy)
       uses: aquasecurity/trivy-action@0.18.0 
       with:
-        input: /tmp/image.tar
+        input: /tmp/image-oci
         severity: CRITICAL,HIGH
         exit-code: 1 
         format: table
