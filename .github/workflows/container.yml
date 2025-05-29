@@ -15,7 +15,7 @@ permissions:
 env:
   IMAGE_NAME: ${{ github.repository }}
   CACHE_REPO: ${{ secrets.DOCKERHUB_USERNAME }}/docker_zad1-cache
-  SCAN_IMAGE: docker_zad1_scan:latest   # tymczasowa nazwa do skanu
+  SCAN_IMAGE: docker_zad1_scan:latest
 
 jobs:
   build-and-scan:
@@ -39,7 +39,7 @@ jobs:
           context: .
           file: ./docker_zad1/Dockerfile
           platforms: linux/amd64
-          load: true                # załaduj do lokalnego dockera
+          load: true
           push: false
           cache-from: type=registry,ref=docker.io/${{ env.CACHE_REPO }}
           cache-to:   type=registry,ref=docker.io/${{ env.CACHE_REPO }},mode=max
